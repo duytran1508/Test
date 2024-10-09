@@ -1,7 +1,5 @@
-// const { status } = require('express/lib/response')
 const User = require('../models/UserModel')
 const bcrypt = require("bcrypt")
-const { genneralAccessToken, genneralRefreshToken } = require('./JwtService')
 
 
 const createUser = (newUser) =>{
@@ -62,22 +60,9 @@ const loginUser = (userLogin) =>{
                     message: 'User or password incorrect'
                 })
             }
-            const access_token = await genneralAccessToken({
-                id: checkUser.id,
-                isAdmin: checkUser.isAdmin 
-            })
-
-            const refresh_token = await genneralRefreshToken({
-                id: checkUser.id,
-                isAdmin: checkUser.isAdmin 
-            })
-
-            console.log('access_token', access_token)
                 resolve({
                     status: 'Oke',
-                    massage: 'Success',
-                    access_token,
-                    refresh_token
+                    massage: 'Success'
                 })
         
         }catch(e){

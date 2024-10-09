@@ -1,8 +1,4 @@
-// const json = require("body-parser/lib/types/json")
-// const { status } = require("express/lib/response")
 const ProductService = require('../services/ProductService') 
-
-
 const createProduct = async (req, res) => {
     try{
         const {name, image, type, price, countInStock, rating, description} = req.body 

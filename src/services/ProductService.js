@@ -1,4 +1,3 @@
-// const { status } = require('express/lib/response')
 const Product = require('../models/ProductModel')
 const bcrypt = require("bcrypt")
 
